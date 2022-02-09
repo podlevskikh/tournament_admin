@@ -46,9 +46,20 @@ export const Provider = () => {
     p.getOne = (resource, params) => {
         const url = `http://localhost:8080/api/${resource}/${params.id}`;
         return fetchUtils.fetchJson(url).then(({json}) => {
-            return {...json, id: json.alias};
+            return {data: {...json, id: json.alias}};
         });
     };
+
+    p.update = (resource, params) => {
+        const url = `http://localhost:8080/api/${resource}/${params.id}`;
+        return fetchUtils.fetchJson(url, {
+            method: 'PUT',
+            body: JSON.stringify(params.data),
+        }).then(({json}) => {
+            return {data: {...json, id: json.alias}};
+        });
+    };
+
 
     return p
 };
