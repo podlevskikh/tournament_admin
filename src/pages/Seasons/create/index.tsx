@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-    Edit,
+    Create,
     SimpleForm,
     TextInput,
     DateInput,
@@ -12,8 +12,8 @@ import {
 } from 'react-admin';
 
 
-export const SeasonEdit = (props) => (
-    <Edit title="Season edition" {...props}>
+export const SeasonCreate = (props) => (
+    <Create {...props}>
         <SimpleForm>
             <TextInput source="alias" validate={required()}/>
             <TextInput source="name" validate={required()}/>
@@ -37,5 +37,5 @@ export const SeasonEdit = (props) => (
                 </SimpleFormIterator>
             </ArrayInput>
         </SimpleForm>
-    </Edit>
+    </Create>
 );

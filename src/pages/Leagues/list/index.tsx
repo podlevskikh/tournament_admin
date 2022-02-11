@@ -5,12 +5,10 @@ import { List, Datagrid, TextField, BooleanField } from 'react-admin';
 export const LeagueList = (props: any) => {
     return (
         <List {...props}>
-            <Datagrid>
+            <Datagrid rowClick="edit">
                 <TextField source="alias" />
                 <TextField source="name" />
-                <TextField source="dateStart" />
-                <TextField source="dateFinish" />
-                <BooleanField source="isCurrent" />
+                <TextField source="strengthWeight" />
             </Datagrid>
         </List>
     );

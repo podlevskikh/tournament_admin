@@ -8,8 +8,8 @@ export const TournamentCreate = (props) => (
             <TextInput source="name" validate={required()}/>
             <TextInput source="description" validate={required()}/>
             <SelectInput source="gender" choices={[
-                {id: 'male', name: 'Male'},
-                {id: 'female', name: 'Female'},
+                {id: 'male', name: 'Мужской'},
+                {id: 'female', name: 'Женский'},
             ]} validate={required()}/>
         </SimpleForm>
     </Create>

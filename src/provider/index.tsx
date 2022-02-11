@@ -28,6 +28,10 @@ export const Provider = () => {
                     jsonData = json.seasons;
                     break;
                 }
+                case "leagues": {
+                    jsonData = json.leagues;
+                    break;
+                }
                 default: {
                     break;
                 }
@@ -60,6 +64,15 @@ export const Provider = () => {
         });
     };
 
+    p.create = (resource, params) => {
+        const url = `http://localhost:8080/api/${resource}`;
+        return fetchUtils.fetchJson(url, {
+            method: 'POST',
+            body: JSON.stringify(params.data),
+        }).then(({json}) => {
+            return {data: {...json, id: json.alias}};
+        });
+    };
 
     return p
 };
